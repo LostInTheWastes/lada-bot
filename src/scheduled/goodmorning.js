@@ -8,7 +8,7 @@ import * as getRandomMeme from "../commands/meme.js";
  * @param {import('telegraf').Context} ctx
  * @returns {Promise<void>}
  */
-export const goodmorning = async (ctx, chat_id = 187988804) => {
+export const goodmorning = async (ctx, chat_id = 906063137) => {
 	const random_greeting = [
 		"Good morning",
 		"Rise and shine",
@@ -72,4 +72,4 @@ export function register(bot) {
 	];
 }
 
-export const schedule = "* * * * *";
+export const schedule = "0 7 * * *";
