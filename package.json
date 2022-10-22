@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "name": "lada-bot",
+  "version": "1.0.0",
+  "description": "A bot for Lada",
+  "main": "src/main.js",
+  "author": "LKD70",
+  "license": "AGPL-3.0",
+  "private": true,
+  "scripts": {
+    "start": "node src/main.js",
+    "dev": "nodemon src/main.js",
+    "lint": "eslint --fix src"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "telegraf": "^4.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.26.0"
+  }
+}
