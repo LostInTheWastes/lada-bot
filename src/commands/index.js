@@ -4,6 +4,7 @@ import * as weather from "./weather.js";
 import * as meme from "./meme.js";
 import * as quote from "./quote.js";
 import * as goodmorning from "../scheduled/goodmorning.js";
+import * as news from "./news.js";
 
 export const commands = [
 	start,
@@ -12,6 +13,7 @@ export const commands = [
 	meme,
 	quote,
 	goodmorning,
+	news,
 ];
 
 /**

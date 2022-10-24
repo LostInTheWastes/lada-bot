@@ -33,7 +33,7 @@ ${isSnowing ? "It seems to be snowing" : "no snow reported"}`;
 
 
 	} catch (error) {
-		ctx.reply("Failed to get error at this time, sorry!");
+		ctx.reply("Failed to get the weather at this time, sorry!");
 	}
 };
 
