@@ -13,7 +13,6 @@ bot.command("commands", (ctx) => {
 	ctx.reply(cmds);
 });
 
-goodmorning.register(bot);
 scheduleJob(goodmorning.schedule, async () => {
 	console.log("Running scheuled task");
 	// LKD ID: 187988804
