@@ -1,8 +1,9 @@
 import getWeather from "../helpers/getWeather.js";
-import { fmt, bold, italic } from "telegraf/format";
+import { fmt, bold, italic, link } from "telegraf/format";
 import getQuote from "../helpers/getQuote.js";
 import * as getRandomQuote from "../commands/quote.js";
 import * as getRandomMeme from "../commands/meme.js";
+import getNews from "../helpers/getNews.js";
 
 /**
  * @param {import('telegraf').Context} ctx
@@ -33,11 +34,21 @@ ${italic`Pressure`}: ${bold(loc.main.pressure.toString())}hPa`
 	const quote_res = await getQuote(true);
 	const quote = fmt`Quote of the day:\n${italic(quote_res[0].q)} — ${quote_res[0].a}`;
 
+	const news = await getNews();
+	const articles = news.articles;
+	const news_content = 
+fmt`${bold(articles[0].source.Name)}
+	[1]: ${link(articles[0].title, articles[0].url)}
+	[2]: ${link(articles[1].title, articles[1].url)}
+	[3]: ${link(articles[2].title, articles[2].url)}`;
+
 	const message = fmt`${random_greeting[Math.floor(Math.random() * random_greeting.length)]} Lada!
 
 ${weather_message}
 
-${quote}`;
+${quote}
+
+${news_content}`;
 
 	await ctx.telegram.sendMessage(chat_id, message, {
 		reply_markup: {
