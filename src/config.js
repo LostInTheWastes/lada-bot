@@ -9,6 +9,9 @@ const config = {
 	},
 	openWeatherMap: {
 		token: process.env?.OPENWEATHERMAP_TOKEN || user_config?.openWeatherMap?.token,
+	},
+	newsApi: {
+		token: process.env?.NEWSAPI_TOKEN || user_config?.newsApi?.token,
 	}
 };
 
